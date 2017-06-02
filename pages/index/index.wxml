@@ -1,0 +1,4 @@
+<scroll-view scroll-y="true" class="page-body">
+  <view class="item" data-id="" wx:for="{{ movies }}" catchtap="movieDetail">
+  </view>
+</scroll-view>
