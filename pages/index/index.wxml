@@ -1,4 +1,16 @@
 <scroll-view scroll-y="true" class="page-body">
-  <view class="item" data-id="" wx:for="{{ movies }}" catchtap="movieDetail">
+  <view class="item" data-id="{{ item.id }}" wx:for="{{ movies }}" catchtap="movieDetail">
+    <image src="{{ item.images.small }}" class="poster"></image>
+    <view class="meta">
+      <!--片名-->
+      <text class="title">{{ item.title }}</text>
+      <!--小标题-->
+      <text class="sub-title">{{ item.original_title }}({{ item.year }})</text>
+      <!--导演-->
+      <text class="artists"><text wx:for="{{ item.directors }}">{{ item.name }}</text></text>
+    </view>
+    <view class="rating">
+      <text class="score">{{ item.rating.average }}</text>
+    </view>
   </view>
 </scroll-view>

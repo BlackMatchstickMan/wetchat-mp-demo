@@ -1,18 +1,36 @@
 // pages/hot/hot.js
+var API_url = 'https://api.douban.com/v2/movie/in_theaters';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+  movies: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.showToast({
+      title: '一大波好片儿正在袭来...',
+      icon: 'loading',
+      duration: 5000
+    });
+    wx.request({
+      url: API_url,
+      data: {},
+      header: {
+        //豆瓣的请求格式比较奇葩
+        'Content-Type': 'application/json,application/json'
+      },
+      success: function(resp) {
+        wx.hideLoading();
+        console.log(resp);
+      }
+    })
   },
 
   /**

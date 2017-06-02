@@ -13,9 +13,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.showToast({
+      title: '一大波好片儿正在袭来...',
+      icon: 'loading',
+      duration: 5000
+    });
+    wx.request({
+      url: API_url,
+      data: {},
+      header: {
+        'Content-Type': 'application/json,application/json'
+      },
+      success: function(resp) {
+        wx.hideLoading();
+        var data = resp.data;
+        console.log(data);
+        that.setData({
+          tittle: data.tittle,
+          movies: data.subjects
+        })
+      }
+    })
   },
-
+  movieDetail: function(e){
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../movie/movie?id=' + id
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

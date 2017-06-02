@@ -4,7 +4,8 @@
     "pages/hot/hot",
     "pages/coming/coming",
     "pages/profile/profile",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/movie/movie"
   ],
   "window": {
     "backgroundTextStyle": "light",
