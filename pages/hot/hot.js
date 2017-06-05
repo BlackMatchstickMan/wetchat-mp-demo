@@ -23,7 +23,6 @@ Page({
       url: API_url,
       data: {},
       header: {
-        //豆瓣的请求格式比较奇葩
         'Content-Type': 'application/json,application/json'
       },
       success: function(resp) {

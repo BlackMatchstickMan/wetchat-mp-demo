@@ -1,1 +1,50 @@
 /* pages/movie/movie.wxss */
+.top-banner{
+  position: relative;
+  width: 100%;
+  height: 600rpx; 
+}
+.top-banner::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+}
+.top-background{
+  display: flex;
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 600rpx;
+  filter: blur(20rpx);
+}
+/*海报*/
+.movie-pic{
+  position: absolute;
+  width: 300rpx;
+  height: 420rpx;
+  top: 80rpx;
+  left: 30rpx;
+  box-shadow: 0 30rpx 150rpx rgba(255,255,255,.3);
+}
+.movie-intro{
+  position: absolute;
+  width: 350rpx;
+  color: #fff;
+  top: 80rpx;
+  right: 30rpx;
+}
+.movie-title{
+  font-size: 50rpx;
+  margin-bottom: 35rpx;
+}
+.movie-intro-txt{
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-bottom: 16rpx;
+}
